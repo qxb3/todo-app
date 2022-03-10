@@ -4,13 +4,9 @@
 	import Header from './components/Header.svelte'
 	import Main from './components/Main.svelte'
 
-	let todoList = []
-	todoList.push({
-		id: 0,
-		title: 'Grocery',
-		description: 'Buy a milk'
-	})
+	import { todoList } from './store'
+	todoList.useLocalStorage()
 </script>
 
-<Header bind:todoList />
-<Main bind:todoList />
+<Header bind:todoList={$todoList} />
+<Main bind:todoList={$todoList} />
