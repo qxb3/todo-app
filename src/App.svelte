@@ -8,5 +8,9 @@
 	todoList.useLocalStorage()
 </script>
 
+<svelte:head>
+	<title>Todo App</title>
+</svelte:head>
+
 <Header bind:todoList={$todoList} />
 <Main bind:todoList={$todoList} />
